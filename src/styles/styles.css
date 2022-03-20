@@ -1,0 +1,338 @@
+:root {
+    --button-bg: #8522c7;
+    --button-active-bg: #681d9b;
+    --small-button-bg: #919191;
+    --small-button-active-bg: #646464;
+    --button-text: #ffffff;
+    --card: #ffffff;
+    --accountText: #494949;
+    --statusText: #494949;
+    --bg-gradient_1: rgb(162, 196, 240);
+    --bg-gradient_2: rgb(240, 162, 217);
+    --gradient_1: rgb(83, 152, 243);
+    --gradient_2: rgb(236, 71, 214);
+    --gradient_3: rgb(241, 204, 80);
+    --success: #24a13f;
+    --warning: #ca5824;
+    --error: #ca2f24;
+    --title: #3d3d3d;
+}
+
+* {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+p {
+    margin: 0;
+}
+
+.colorGradient {
+    background: linear-gradient(
+            to bottom,
+            var(--gradient_1) 0%,
+            var(--gradient_2) 65%,
+            var(--gradient_3) 100%
+        )
+        fixed;
+}
+
+.page {
+    /* min-height: 100vh; */
+    min-width: 30vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.card {
+    background-color: var(--card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 300px;
+    transition: 0.3s;
+    margin: 50px;
+    position: relative;
+}
+.contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 auto;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card_header {
+    flex: 1 0 auto;
+    /* height: 300px; */
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_header_image {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card_body {
+    padding: 20px;
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1.5px solid #f1f1f1;
+}
+.title__and__remaining {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
+.title {
+    margin: 1rem 0 0 0;
+    font-size: 2rem;
+    color: var(--title);
+    /* align-self: center; */
+}
+.remaining__and__price {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.remaining,
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3d3d3d;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_body_view_contract {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.card_footer {
+    /* padding: 15px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin: 8px 10px;
+}
+
+.spin {
+    animation: item-spin infinite 20s linear;
+}
+
+.statusText {
+    color: var(--statusText);
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.card_footer > button {
+    font-size: 0.8rem;
+    padding: 4px 7px;
+    margin: 0 10px;
+}
+.accountText {
+    color: var(--accountText);
+    font-weight: 400;
+    font-size: 0.9rem;
+
+    padding: 3px 0 5px 0;
+    overflow: hidden;
+}
+
+.minting_box {
+    display: flex;
+    flex-direction: column;
+
+    /* padding: 15px; */
+}
+
+.minting_box form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.minting_box .minting_amount {
+    background: 0;
+    border: 0;
+    outline: none;
+
+    border-bottom: 1px solid #cfcfcf;
+
+    /* transition: padding 0.3s 0.2s ease; */
+    width: 6rem;
+    text-align: center;
+
+    font-weight: 300;
+    color: #616161;
+    font-size: 1.1rem;
+}
+
+.minting_box .minting_amount::placeholder {
+    font-size: 0.8rem;
+    color: #cfcfcf;
+    font-weight: 200;
+}
+
+.minting_box .minting_amount:focus {
+    /* padding-bottom: 5px; */
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid #b1b1b1;
+}
+.minting_box .minting_total {
+    margin: 0 0.5rem 0 0;
+    font-weight: 200;
+    color: #3d3d3d;
+}
+
+.minting_box .minting_button {
+    background: 0;
+    border: 2px solid #03dd94;
+    border-radius: 15px;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #03dd94;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.minting_box .minting_button:hover {
+    background: 0;
+    background-color: #03dd94;
+    color: white;
+}
+
+.minting_box .minting_button:disabled {
+    background: 0;
+    background-color: #bbcec8;
+    border: 0;
+    color: white;
+}
+
+.withdraw {
+    align-self: center;
+    background: linear-gradient(
+        -120deg,
+        /* Base gradient stops */ #2b1de8,
+        #421de8,
+        #dd00f3,
+        #e06deb,
+        /* Repeat your base gradient stops */ #2b1de8,
+        #421de8,
+        #dd00f3,
+        #e06deb,
+        /* Repeat your first gradient stop */ #2b1de8
+    );
+
+    background-size: 350% 350%;
+    animation: rainbow 5s linear infinite;
+    border: 2px solid #585858;
+    border-radius: 15px;
+    padding: 3px 20px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
+}
+@keyframes rainbow {
+    0% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.withdraw:hover {
+    background: 0;
+    background-color: #dd27ee;
+}
+
+.contract_url {
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: rgb(85, 85, 85);
+}
+
+.ns {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+._90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(-90deg);
+}
+
+.button {
+    display: inline-block;
+    padding: 7px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 2px;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.button:active {
+    background-color: var(--button-active-bg);
+}
